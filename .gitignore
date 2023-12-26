@@ -1,0 +1,17 @@
+# Temporary: All examples hidden for privacy
+*.pdf
+*.tex
+
+# This should die in a dumpster fire >:(
+**/.DS_Store
+
+# Files from default build config (except PDFs)
+**/*.aux
+**/*.fdb_latexmk
+**/*.fls
+**/*.log
+**/*.out
+**/*.synctex.gz
+
+# Output files (from custom build config)
+# !**/out/*.pdf

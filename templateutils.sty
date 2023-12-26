@@ -1,0 +1,73 @@
+\usepackage{titlesec}
+\usepackage{tabularx}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{bookmark}
+\usepackage{xparse}
+\usepackage{etoolbox}
+
+\pagestyle{fancy}
+\fancyhf{}
+\pagenumbering{gobble}
+\setlength\parindent{0pt}
+\hypersetup{colorlinks=true, urlcolor=blue}
+\titleformat{\section}{\scshape \LARGE}{}{0pt}{}[\titlerule \vspace{0.1\baselineskip}]  % TODO: Fix 0.1 approximation of baseline-to-titlerule offset
+\renewcommand{\headrulewidth}{0pt}
+
+\newenvironment{lrColumns}  % TODO: Fix `Underfull \hbox' error from `\hfill' (Fixed?)
+{\large \tabularx{\textwidth}{@{} >{\raggedright\arraybackslash}X >{\hfill} l @{}}}{\endtabularx}
+
+\newcommand{\bulletStyle}{}
+\newcommand{\setBulletStyle}[1]{
+  \renewcommand{\bulletStyle}{#1}
+}
+
+\newlength{\sectionSpacing}
+\newcommand{\setSectionSpacing}[1]{
+  \setlength{\sectionSpacing}{#1}
+}
+
+\newcommand{\setFooterDistance}[1]{
+  \setlength{\footskip}{#1}
+}
+
+\newcommand{\setBulletsSpacing}[1]{
+  \setlist{nosep, itemsep={#1}, topsep={#1}, partopsep={#1}}
+}
+
+% TODO: Right-align lrHeader not exact
+% TODO: Support 3-column multi-line headers
+% TODO: Diagram spacing needs and implement
+% TODO: Section list vs. bullets list spacing (reduce nesting like in Uddin's template)
+
+% Huge Bold     ...     Normal
+\newcommand{\lrHeader}[2]{
+    \begin{lrColumns}
+        \Huge{\textbf{#1}} & #2 \\
+    \end{lrColumns}
+}
+
+% Bold          ...     Italicized
+% Italicized    ...     Normal (optional)
+% Italicized    ...     Normal (optional)
+\NewDocumentCommand{\lr}{m m O{} O{} O{} O{}}{
+  \begin{lrColumns}
+        \textbf{#1} & \textit{#2} \\
+        \ifblank{#3}{}{\textit{#3} & #4 \\}
+        \ifblank{#5}{}{\textit{#5} & #6 \\}
+  \end{lrColumns}
+}
+
+% Bold: Normal...
+\newcommand{\labeledLine}[2]{ % TODO: Consider deprecating
+    {\textbf{#1}{: #2}}
+}
+
+% Bulleted List (optional bullet style)
+\NewDocumentEnvironment{bullets}{O{\bulletStyle}}{\begin{itemize}[label={#1}, leftmargin=1.5em]}{\end{itemize}} % TODO: Un-hard-code leftmargin
+
+% Non-bulleted List
+\newenvironment{nobullets}{\begin{itemize}[label={}, leftmargin=0pt]}{\end{itemize}}
+
+% Section-ed List
+\newenvironment{sectionList}[1]{\begin{nobullets}\setlength\itemsep{\sectionSpacing} \section{#1}}{\end{nobullets}}
