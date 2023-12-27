@@ -15,7 +15,6 @@
 \titleformat{\section}{\scshape \LARGE}{}{0pt}{}[\titlerule \vspace{0.1\baselineskip}]  % TODO: Fix 0.1 approximation of baseline-to-titlerule offset
 
 % TODO: Not perfectly against right margin
-% TODO: Fix `Underfull \hbox' error from `\hfill' (Fixed?)
 \newenvironment{lrColumns}
 {\large \tabularx{\textwidth}{@{} >{\raggedright\arraybackslash}X >{\hfill} l @{}}}{\endtabularx}
 
@@ -50,7 +49,7 @@
 % Bold          ...     Italicized (if optional text specified, otherwise: Normal)
 % Italicized    ...     Normal (optional)
 % Italicized    ...     Normal (optional)
-\NewDocumentCommand{\lr}{m m O{} O{} O{} O{}}{  % TODO: Survey text formatting for even/right-aligned #s
+\NewDocumentCommand{\lr}{m m O{} O{} O{} O{}}{  % TODO: Modularize rows
   \begin{lrColumns}
         \ifblank{#3}{\textbf{#1} & #2 \\}{\textbf{#1} & \textit{#2} \\}
         \ifblank{#3}{}{\textit{#3} & #4 \\}
@@ -65,7 +64,6 @@
   \end{lcrColumns}
 }
 
-% Bold: Normal
 \newcommand{\labeled}[2]{
     {\textbf{#1}{: #2}}
 }
@@ -80,6 +78,6 @@
 {\begin{nobullets}\setlength\itemsep{\sectionSpacing} \section{#1}}{\end{nobullets}}
 
 \newcommand{\dateFooter}{
-  \setlength{\footskip}{1.5\baselineskip}  % TODO: Un-hard-code
+  \setlength{\footskip}{1.5\baselineskip}  % TODO: Un-hard-code footskip
   \lfoot{\small{Rev. \today}}
 }

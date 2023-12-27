@@ -1,6 +1,4 @@
-# Temporary: All examples hidden for privacy
-*.pdf
-*.tex
+tests/
 
 # This should die in a dumpster fire >:(
 **/.DS_Store
@@ -14,4 +12,4 @@
 **/*.synctex.gz
 
 # Output files (from custom build config)
-# !**/out/*.pdf
+!**/out/*.pdf
