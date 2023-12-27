@@ -1,6 +1,6 @@
 # emuser: a painless LaTeX resume template
 
-> Yes, it's a play on Erewhon. Don't worry, this won't cost you a kidney (it's free!).
+> Yes, it's a play on Erewhon.
 
 Clone this repoistory or open [this Overleaf template](https://www.overleaf.com/read/ffngfqgdydmt#8f1610)!
 
