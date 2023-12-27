@@ -2,7 +2,7 @@
 
 > Yes, it's a play on Erewhon. Don't worry, this won't cost you a kidney (it's free!).
 
-Clone this repoistory or open [this Overleaf template](plsmakelink)!
+Clone this repoistory or open [this Overleaf template](https://www.overleaf.com/read/ffngfqgdydmt#8f1610)!
 
 ![Emuser template](images/emuser.png)
 _Your resume could look like this! See [the PDF](out/emuser.pdf)._
