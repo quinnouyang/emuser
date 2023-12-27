@@ -2,12 +2,12 @@
 
 > Yes, it's a play on Erewhon.
 
-Clone this repoistory or open [this Overleaf template](https://www.overleaf.com/read/ffngfqgdydmt#8f1610)!
-
 ![Emuser template](images/emuser.png)
 _Your resume could look like this! See [the PDF](out/emuser.pdf)._
 
 # Get Started
+
+Clone this repoistory or open [this Overleaf template](https://www.overleaf.com/read/ffngfqgdydmt#8f1610)!
 
 You only need to edit [`emuser.tex`](emuser.tex). Only touch [`emuserutils.sty`](emuserutils.sty) if you're feeling dangerous.
 
