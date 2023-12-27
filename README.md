@@ -4,7 +4,7 @@
 
 Clone this repoistory or open [this Overleaf template](plsmakelink)!
 
-![out/**emuser**.pdf](images/emuser.png)
+![Emuser template](images/emuser.png)
 
 # Get Started
 
