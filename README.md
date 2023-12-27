@@ -4,6 +4,8 @@
 
 A pretty decent LaTeX resume template. Try it for yourself!
 
+![out/**emuser**.pdf](images/emuser.png)
+
 ## Usage
 
 Clone this repoistory or copy [this Overleaf template](hahaha). You only need to work in `emuser.tex` but you may edit `emuserutils.sty` if you're feeling dangerous. The TeX file is self-documenting/instructional, but here's the overview:
