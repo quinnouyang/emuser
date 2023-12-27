@@ -6,61 +6,51 @@
 \setBulletStyle{$\circ$}
 
 % Adjust spacings to fit one page
-\setBulletsSpacing{0.2\baselineskip}  % [0.1 ... 0.5] (recommended)
-\setSectionSpacing{0.5\baselineskip}  % [0.3 ... 0.7] (recommended)
+\setBulletsSpacing{0.1 \baselineskip}  % [0.1 ... 0.5] (recommended)
+\setSectionSpacing{0.3 \baselineskip}  % [0.3 ... 0.7] (recommended)
 
 \begin{document}
 
 \lrHeader
 {First Last}
-{
-    (012) 345-6789
-    \textbf{
+{(012) 345-6789 \textbf{
         $\vert$ \href{mailto:myprofessional@email.com}{myprofessional@email.com}
         $\vert$ \href{https://www.linkedin.com/in/firstlast/}{LinkedIn}
-        $\vert$ \href{https://www.youtube.com/watch?v=dQw4w9WgXcQ}{firstlast.com}
-    }
-}
+        $\vert$ \href{https://www.youtube.com/watch?v=dQw4w9WgXcQ}{firstlast.com}}}
 
 \begin{sectionList}{Education}
     \item \lr
     {Two Degrees University}{City, ST}
-    [D.M.A in Resumes][Expected Dec. 2048]
-    [B.M. in Something, Minor in Something Else $\vert$ GPA: 0.00/4.00][Month Year -- Month Year]
-    \item \lr
-    {Many ways to use \texttt{lr}}{Jan. 2022 -- May 2022}
-    [A.A. in my GPA moved down the block $\Longrightarrow$][GPA: 3.74]
-    \item \begin{nobullets}
+    [D.M.A in Resumes $\vert$ GPA: 0.00/4.00][Month Year -- Month Year]
+    [B.M. in Something, Minor in Something Else][Dec. 2048]
+    \begin{nobullets}
         \item \labeled
-        {Coursework}{Can move this section below `Experience'/`Projects' (usually once work experience is more important than education)}
+        {Coursework}{Can move this section below \textsc{Experience/Projects} (usually when experience $>$ education)}
         \item \labeled
-        {Extracurriculars \& Honors}{Can delete this entire \texttt{nobullets} list if it's not worth the space}
+        {Extracurriculars \& Honors}{Delete this entire \texttt{nobullets} list if it's not worth the space}
     \end{nobullets}
 \end{sectionList}
 
 \begin{sectionList}{Experience}
     \item \lr
-    {EmployMePlz}{City, ST}
-    [CEO][Dec. 0000 -- Present]
-    [Prompt Engineering Intern][Jan. 0000 -- Dec. 0000]
+    {EmployMePlease}{City, ST}
+    [CEO Intern][Jan. 0000 -- Present]
     \begin{bullets}
-        \item Optimized a customized system for job hunting to be 69\% faster though automated tools, enabling applications to 9000+ positions across 51 states in the U.S. while setting new personal-best records of career desperation
+        \item Optimized a customized system for job hunting to be 69\% faster though automated tools, enabling myself to apply to 9000+ positions across 51 states in the U.S. while setting new personal-best records of career desperation
         \item Boosted recruiter response rates by $\times \infty$ by using the \href{https://www.inc.com/bill-murphy-jr/google-recruiters-say-these-5-resume-tips-including-x-y-z-formula-will-improve-your-odds-of-getting-hired-at-google.html}{X-Y-Z format} and not over-bolding technical skills such as \textbf{Microsoft Office, Google Suite, and ChatGPT}
     \end{bullets}
 
     \item \lr
-    {University of Illinois Chambana-Urpaign}{Jan. 0000 -- Jan. 0001}
+    {University of Illinois Chambana-Urpaign}{\textnormal{Dates can go here instead!}}
     [Teaching Unassistant][]
     \begin{bullets}
-        \item Omit the location or swap it with the dates if you want \textbf{(just be consistent)}
+        \item There are many ways to use \texttt{lr}: omit the location, move the dates, etc. \textbf{(just be consistent)}
     \end{bullets}
 
     \item \lcr
-    {Left Company}
-    {Center Position}
-    {Right Dates}
+    {Left Company}{Center Position}{Right Dates}
     \begin{bullets}
-        \item This is if you like one-liners \textbf{(just be consistent)}
+        \item Or maybe you like \texttt{lcr} \textbf{(just be consistent)}
     \end{bullets}
 
     \item \lr
@@ -68,13 +58,25 @@
     \begin{bullets}
         \item Play around with \href{https://www.overleaf.com/learn/latex/Font_sizes%2C_families%2C_and_styles}{font sizes, families, and styles} \textbf{(just be consistent)}
         \item Can use periods \textbf{(just be consistent)}.
-        \item `|' does not look like `$\vert$'
+        \item Beware: `|' is different from `$\vert$'!
     \end{bullets}
+\end{sectionList}
+
+\begin{sectionList}{Title}
+    \item \lr{Item 1}{}
+    \item \lr{Item 2}{}
+    \item  \lr{Company}{Location}
+    [Position][Dates]
+    \item \lr{University}{}  % Omits location
+    [Degree 2][Dates]
+    [Degree 1][Dates]
+    \item \lr{Project}{Dates}  % Right-column is non-italicized if there are only two values
+    \item \lcr{Left}{Center}{Right}
 \end{sectionList}
 
 \begin{sectionList}{Projects}
     \item \lr
-    {\href{https://github.com/quinnouyang/emuser}{Emuser}: A Really Good Resume Template}{Dec. 2023 -- Present}
+    {\href{https://github.com/quinnouyang/emuser}{Emuser}: A Pretty Awful Resume Template}{Dec. 2023 -- Present}
     \begin{bullets}
         \item Released a modern LaTeX resume template used by at least 1 hooman, introducing accessible formatting options, standardizing multi-line section items, and virtually eliminating vertical spacing hacks
         \begin{bullets}[$\bullet$]
@@ -84,7 +86,7 @@
     \end{bullets}
 
     \item \lr
-    {You Don't Need 42 Persoal Projects}{January 2023 -- Janurary 2023}
+    {No Spelling Mistakes Here!}{January 2023 -- Janurary 2023}
     \begin{nobullets}
         \item Since I only have one thing to say, maybe I don't want bullet points...
     \end{nobullets}

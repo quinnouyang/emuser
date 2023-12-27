@@ -14,7 +14,6 @@
 \hypersetup{colorlinks=true, urlcolor=blue}
 \titleformat{\section}{\scshape \LARGE}{}{0pt}{}[\titlerule \vspace{0.1\baselineskip}]  % TODO: Fix 0.1 approximation of baseline-to-titlerule offset
 
-% TODO: Not perfectly against right margin
 \newenvironment{lrColumns}
 {\large \tabularx{\textwidth}{@{} >{\raggedright\arraybackslash}X >{\hfill} l @{}}}{\endtabularx}
 
@@ -39,11 +38,13 @@
 
 % Huge Bold     ...     Normal
 % TODO: Support \href \textbf and $\vert$
+% TODO: Fix right-alignment hack of enforcing `}}'
 \newcommand{\lrHeader}[2]{
     \begin{lrColumns}
         \Huge\textbf{#1} & #2
     \end{lrColumns}
     \vspace{-2\sectionSpacing}  % TODO: Un-hard-code (good before sectionList, too close before plaintext)
+    \relax
 }
 
 % Bold          ...     Italicized (if optional text specified, otherwise: Normal)
