@@ -29,7 +29,7 @@
 \newlength{\sectionSpacing}
 \newcommand{\setSectionSpacing}[1]{
   \setlength{\sectionSpacing}{#1}     % Spacing between items
-  \titlespacing\section{0pt}{#1}{#1}  % Top and bottom margins of header
+  \titlespacing\section{0pt}{\sectionSpacing}{\sectionSpacing}  % Top and bottom margins of header
 }
 
 \newcommand{\setBulletsSpacing}[1]{
