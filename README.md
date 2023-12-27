@@ -5,6 +5,7 @@
 Clone this repoistory or open [this Overleaf template](plsmakelink)!
 
 ![Emuser template](images/emuser.png)
+_Your resume could look like this! See [the PDF](out/emuser.pdf)._
 
 # Get Started
 
@@ -37,7 +38,7 @@ For organizing your education, experience, etc., `sectionList` is a title with i
 
 ## Section Items
 
-For showing individual experiences, projects, etc., section items are **usually an `item` in a `sectionList`**.
+For showing individual experiences, projects, etc., section items are usually **an `item` in a `sectionList`**.
 
 ### Headers
 
@@ -99,7 +100,7 @@ For detailing individual experiences, summarizing skills, etc.: `bullets` and `n
 
   ![Section list of "Skills" with "Skill issue"](images/nobullets.png)
 
-- `labeled` is **usually an `item` in a `nobullets`**, requiring 2 values. E.g.
+- `labeled` is usually **an `item` in a `nobullets`**, requiring 2 values. E.g.
   ```latex
   \labeled{Label}{Content}
   ```
