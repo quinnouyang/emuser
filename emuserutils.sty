@@ -12,6 +12,7 @@
 \usepackage{bookmark}
 \usepackage{xparse}
 \usepackage{etoolbox}
+\usepackage{accsupp}
 
 \pagestyle{fancy}
 \fancyhf{}
@@ -30,44 +31,53 @@
 
 \newcommand{\bulletStyle}{}
 \newcommand{\setBulletStyle}[1]{
-  \renewcommand{\bulletStyle}{#1}
+    \renewcommand{\bulletStyle}{#1}
 }
 
 \newlength{\sectionSpacing}
 \newcommand{\setSectionSpacing}[1]{
-  \setlength{\sectionSpacing}{#1}     % Spacing between items
-  \titlespacing\section{0pt}{\sectionSpacing}{\sectionSpacing}  % Top and bottom margins of header
+    \setlength{\sectionSpacing}{#1}     % Spacing between items
+    \titlespacing\section{0pt}{\sectionSpacing}{\sectionSpacing}  % Top and bottom margins of header
 }
 
 \newcommand{\setBulletsSpacing}[1]{
-  \setlist{nosep, itemsep={#1}, topsep={#1}, partopsep={#1}}
+    \setlist{nosep, itemsep={#1}, topsep={#1}, partopsep={#1}}
 }
+
+\newcommand{\alttext}[2]
+{\BeginAccSupp{method=pdfstringdef,ActualText={#2}}#1\EndAccSupp{}}
 
 % Huge Bold     ...     Normal
 \newcommand{\lrHeader}[2]{
-    \begin{lrColumns}
+    \alttext
+    {\begin{lrColumns}
         \Huge\textbf{#1} & #2
     \end{lrColumns}
     \vspace{-2\sectionSpacing}
-    \relax
+    \relax}
+    {#1 #2}
 }
 
 % Bold          ...     Italicized (if optional text specified, otherwise: Normal)
 % Italicized    ...     Normal (optional)
 % Italicized    ...     Normal (optional)
 \NewDocumentCommand{\lr}{m m O{} O{} O{} O{}}{
-  \begin{lrColumns}
+    \alttext
+    {\begin{lrColumns}
         \ifblank{#3}{\textbf{#1} & #2 \\}{\textbf{#1} & \textit{#2} \\}
         \ifblank{#3}{}{\textit{#3} & #4 \\}
         \ifblank{#5}{}{\textit{#5} & #6 \\}
-  \end{lrColumns}
+    \end{lrColumns}}
+    {#1 #2 #3 #4 #5 #6}
 }
 
 % Bold    ...   Italicized    ...   Normal
 \newcommand{\lcr}[3]{
-  \begin{lcrColumns}
-    \textbf{#1} & \textit{#2} & #3
-  \end{lcrColumns}
+    \alttext
+    {\begin{lcrColumns}
+        \textbf{#1} & \textit{#2} & #3
+    \end{lcrColumns}}
+    {#1 #2 #3}
 }
 
 \newcommand{\labeled}[2]{
@@ -84,6 +94,8 @@
 {\begin{nobullets}\setlength\itemsep{\sectionSpacing} \section{#1}}{\end{nobullets}}
 
 \newcommand{\dateFooter}{
-  \setlength{\footskip}{1.5\baselineskip}
-  \lfoot{\small{Rev. \today}}
+    \setlength{\footskip}{1.5\baselineskip}
+    \alttext
+    {\lfoot{\small{Rev. \today}}}
+    {}
 }
