@@ -1,4 +1,5 @@
 tests/
+**/*.zip
 
 # This should die in a dumpster fire >:(
 **/.DS_Store

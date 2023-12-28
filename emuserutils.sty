@@ -19,7 +19,7 @@
 \pagenumbering{gobble}
 \setlength\parindent{0pt}
 \hypersetup{colorlinks=true, urlcolor=blue}
-\titleformat{\section}{\scshape \LARGE}{}{0pt}{}[\titlerule \vspace{0.1\baselineskip}]  % TODO: Fix 0.1 approximation of baseline-to-titlerule offset
+\titleformat{\section}{\scshape \LARGE}{}{0pt}{}[\titlerule \vspace{0.1\baselineskip}]
 
 \newenvironment{lrColumns}
 {\large \tabularx{\textwidth}{@{} >{\raggedright\arraybackslash}X >{\hfill} l @{}}}{\endtabularx}
@@ -44,20 +44,18 @@
 }
 
 % Huge Bold     ...     Normal
-% TODO: Support \href \textbf and $\vert$
-% TODO: Fix right-alignment hack of enforcing `}}'
 \newcommand{\lrHeader}[2]{
     \begin{lrColumns}
         \Huge\textbf{#1} & #2
     \end{lrColumns}
-    \vspace{-2\sectionSpacing}  % TODO: Un-hard-code (good before sectionList, too close before plaintext)
+    \vspace{-2\sectionSpacing}
     \relax
 }
 
 % Bold          ...     Italicized (if optional text specified, otherwise: Normal)
 % Italicized    ...     Normal (optional)
 % Italicized    ...     Normal (optional)
-\NewDocumentCommand{\lr}{m m O{} O{} O{} O{}}{  % TODO: Modularize rows
+\NewDocumentCommand{\lr}{m m O{} O{} O{} O{}}{
   \begin{lrColumns}
         \ifblank{#3}{\textbf{#1} & #2 \\}{\textbf{#1} & \textit{#2} \\}
         \ifblank{#3}{}{\textit{#3} & #4 \\}
@@ -77,7 +75,7 @@
 }
 
 \NewDocumentEnvironment{bullets}{O{\bulletStyle}}
-{\begin{itemize}[label={#1}, leftmargin=1.5em]}{\end{itemize}} % TODO: Un-hard-code leftmargin
+{\begin{itemize}[label={#1}, leftmargin=1.5em]}{\end{itemize}}
 
 \newenvironment{nobullets}
 {\begin{itemize}[label={}, leftmargin=0pt]}{\end{itemize}}
@@ -86,6 +84,6 @@
 {\begin{nobullets}\setlength\itemsep{\sectionSpacing} \section{#1}}{\end{nobullets}}
 
 \newcommand{\dateFooter}{
-  \setlength{\footskip}{1.5\baselineskip}  % TODO: Un-hard-code footskip
+  \setlength{\footskip}{1.5\baselineskip}
   \lfoot{\small{Rev. \today}}
 }
