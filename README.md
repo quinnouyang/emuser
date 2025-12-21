@@ -1,15 +1,27 @@
-# emuser: a painless LaTeX resume template
+# `emuser`: a painless LaTeX resume template
 
-> Yes, it's a play on Erewhon.
+> Yes, it's a play on Erewhon. (I recently learned `reverse("nowhere") != "erewhon"`, but `reverse("resume") == "emuser"`.)
 
-![Emuser template](images/emuser.png)
+<img src="images/emuser.png" width="512">
+
 _Your resume could look like this! See [the PDF](out/emuser.pdf)._
 
-# Get Started
+## Why `emuser`?
 
-Clone this repoistory or open [this Overleaf template](https://www.overleaf.com/read/ffngfqgdydmt#8f1610)! 
+> The last LaTeX template we'll ever need (hopefully).
 
-You need **both** [`emuser.tex`](emuser.tex) and [`emuserutils.sty`](emuserutils.sty) in the same directory level, but you only need to **edit** [`emuser.tex`](emuser.tex). Only touch [`emuserutils.sty`](emuserutils.sty) if you're unsatisfied with the default options and are feeling dangerous.
+[LaTeX](https://www.latex-project.org/)'s been the standard for technical/scientific typesetting, becoming the popular choice for software engineers, etc. thanks to [Jake's template](https://github.com/jakegut/resume). `emuser` attempts to strike the right balance of LaTeX's benefits and downsides, i.e. $emuser = \text{argmax}(\text{benefit}(t)) - \lambda \cdot \text{pain}(t))$. This means:
+
+- **Worry about content, not formatting.** LaTeX forgivingly handles sizing, spacing, etc. for you.
+- **Human-readable formatting.** What does `l@{\extracolsep{\fill}}` do? IDK either.
+- **Set-and-forget configurations.** Pick a font and margin size, and that's all you probably ever need.
+- **Looks great!**
+
+# Start now
+
+Clone this repo or open [this Overleaf template](https://www.overleaf.com/read/ffngfqgdydmt#8f1610)! 
+
+Functionally, you need **both** [`emuser.tex`](emuser.tex) and [`emuserutils.sty`](emuserutils.sty) in the same directory level, but you only need to **edit** [`emuser.tex`](emuser.tex). Only touch [`emuserutils.sty`](emuserutils.sty) if you're unsatisfied with the default options and are feeling dangerous.
 
 ### Main Header
 
